@@ -45943,6 +45943,13 @@ process.hltPFHT4Jet +
 process.hltPF4JetHT750 +
 process.HLTEndSequence )
 
+process.HLT_PFHT750_4Jet_noex_v1 = cms.Path( process.HLTBeginSequence +
+process.hltL1sL1HTT150ORHTT175 +
+process.HLTAK4PFJetsSequence +
+process.hltPFHT4Jet +
+process.hltPF4JetHT750 +
+process.HLTEndSequence )
+
 process.HLT_PFHT350_v1 = cms.Path( process.HLTBeginSequence + process.hltL1sL1HTT150ORHTT175 + process.hltPrePFHT350 + process.HLTAK4CaloJetsSequence + process.hltHtMht + process.hltHt280 + process.HLTAK4PFJetsSequence + process.hltPFHT + process.hltPFHT350 + process.HLTEndSequence )
 process.HLT_PFHT600_v1 = cms.Path( process.HLTBeginSequence + process.hltL1sL1HTT150ORHTT175 + process.hltPrePFHT600 + process.HLTAK4CaloJetsSequence + process.hltHtMht + process.hltHt500 + process.HLTAK4PFJetsSequence + process.hltPFHT + process.hltPFHT600 + process.HLTEndSequence )
 process.HLT_PFHT650_v1 = cms.Path( process.HLTBeginSequence + process.hltL1sL1HTT150ORHTT175 + process.hltPrePFHT650 + process.HLTAK4CaloJetsSequence + process.hltHtMht + process.hltHt550 + process.HLTAK4PFJetsSequence + process.hltPFHT + process.hltPFHT650 + process.HLTEndSequence )
@@ -46000,11 +46007,14 @@ process.HLTAnalyzerEndpath = cms.EndPath( process.hltL1GtTrigReport + process.hl
 #process.ALCAPHISYMOutput = cms.EndPath( process.hltPreAlCaEcalPhiSym + process.hltOutputALCAPHISYM )
 #process.ALCALUMIPIXELSOutput = cms.EndPath( process.hltPreALCALUMIPIXELSOutput + process.hltOutputALCALUMIPIXELS )
 
+process.load('generated_cff')
+from generated_cff import junk
 
 process.HLTSchedule = cms.Schedule( *(process.HLTriggerFirstPath,
 process.HLT_PFHT550_4Jet_v1,
 process.HLT_PFHT650_4Jet_v1,
 process.HLT_PFHT750_4Jet_v1,
+process.HLT_PFHT750_4Jet_noex_v1,
 process.HLT_PFHT350_v1,
 process.HLT_PFHT600_v1,
 process.HLT_PFHT650_v1,
@@ -46032,9 +46042,8 @@ process.HLT_VBF_DisplacedJet40_TightID_Hadronic_v1,
 process.HLT_PFHT450_SixJet40_PFBTagCSV_v1,
 process.HLT_PFHT400_SixJet30_BTagCSV0p5_2PFBTagCSV_v1,
 process.HLT_PFHT450_SixJet40_v1,
-process.HLT_PFHT400_SixJet30_v1,
-process.HLTriggerFinalPath,
-process.HLTAnalyzerEndpath ))
+process.HLT_PFHT400_SixJet30_v1) + junk + (process.HLTriggerFinalPath, process.HLTAnalyzerEndpath)
+)
 
 
 process.source = cms.Source( "PoolSource",
