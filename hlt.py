@@ -46371,3 +46371,4 @@ if 'MessageLogger' in process.__dict__:
     process.MessageLogger.categories.append('HLTrigReport')
     process.MessageLogger.categories.append('FastReport')
 
+process.TFileService = cms.Service('TFileService', fileName = cms.string('ste.root'))
