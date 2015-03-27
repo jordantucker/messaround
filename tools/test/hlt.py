@@ -46160,6 +46160,13 @@ import HLTrigger.Configuration.customizeHLTforL1Emulator
 process = HLTrigger.Configuration.customizeHLTforL1Emulator.switchToL1Emulator( process )
 process = HLTrigger.Configuration.customizeHLTforL1Emulator.switchToSimStage1Digis( process )
 
+if hasattr(process, 'hltCsc2DRecHits'):
+    process.hltCsc2DRecHits.wireDigiTag  = cms.InputTag("simMuonCSCDigis","MuonCSCWireDigi")
+    process.hltCsc2DRecHits.stripDigiTag = cms.InputTag("simMuonCSCDigis","MuonCSCStripDigi")
+if hasattr(process, 'cscReEmulTriggerPrimitiveDigis'):
+    process.cscReEmulTriggerPrimitiveDigis.CSCComparatorDigiProducer = cms.InputTag("simMuonCSCDigis","MuonCSCComparatorDigi")
+    process.cscReEmulTriggerPrimitiveDigis.CSCWireDigiProducer = cms.InputTag("simMuonCSCDigis","MuonCSCWireDigi")
+
 if 'MessageLogger' in process.__dict__:
     process.MessageLogger.categories.append('TriggerSummaryProducerAOD')
     process.MessageLogger.categories.append('L1GtTrigReport')
