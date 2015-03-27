@@ -1,4 +1,4 @@
-# hltGetConfiguration /dev/CMSSW_7_4_0/GRun --full --offline --mc --unprescale --process TEST --globaltag auto:run2_mc_GRun > hlt.py
+# hltGetConfiguration /dev/CMSSW_7_4_0/GRun --full --offline --mc --unprescale --process TEST --globaltag auto:run2_mc_GRun --l1-emulator 'stage1,gt' --l1Xml L1Menu_Collisions2015_25ns_v2_L1T_Scales_20141121_Imp0_0x1030.xml > hlt.py
 # /dev/CMSSW_7_4_0/GRun/V31 (CMSSW_7_4_0_pre9)
 
 import FWCore.ParameterSet.Config as cms
@@ -46121,6 +46121,36 @@ if 'GlobalTag' in process.__dict__:
     # fix for multi-run processing
     process.GlobalTag.RefreshEachRun = cms.untracked.bool( False )
     process.GlobalTag.ReconnectEachRun = cms.untracked.bool( False )
+
+# override the L1 menu from an Xml file
+process.l1GtTriggerMenuXml = cms.ESProducer("L1GtTriggerMenuXmlProducer",
+  TriggerMenuLuminosity = cms.string('startup'),
+  DefXmlFile = cms.string('L1Menu_Collisions2015_25ns_v2_L1T_Scales_20141121_Imp0_0x1030.xml'),
+  VmeXmlFile = cms.string('')
+)
+process.L1GtTriggerMenuRcdSource = cms.ESSource("EmptyESSource",
+  recordName = cms.string('L1GtTriggerMenuRcd'),
+  iovIsRunNotTime = cms.bool(True),
+  firstValid = cms.vuint32(1)
+)
+process.es_prefer_l1GtParameters = cms.ESPrefer('L1GtTriggerMenuXmlProducer','l1GtTriggerMenuXml')
+
+# customize the L1 emulator to run customiseL1EmulatorFromRaw with HLT to switchToSimStage1Digis
+process.load( 'Configuration.StandardSequences.RawToDigi_cff' )
+process.load( 'Configuration.StandardSequences.SimL1Emulator_cff' )
+import L1Trigger.Configuration.L1Trigger_custom
+#
+
+# 2015 Run2 emulator
+import L1Trigger.L1TCalorimeter.L1TCaloStage1_customForHLT
+process = L1Trigger.L1TCalorimeter.L1TCaloStage1_customForHLT.customiseL1EmulatorFromRaw( process )
+
+#
+process = L1Trigger.Configuration.L1Trigger_custom.customiseResetPrescalesAndMasks( process )
+# customize the HLT to use the emulated results
+import HLTrigger.Configuration.customizeHLTforL1Emulator
+process = HLTrigger.Configuration.customizeHLTforL1Emulator.switchToL1Emulator( process )
+process = HLTrigger.Configuration.customizeHLTforL1Emulator.switchToSimStage1Digis( process )
 
 if 'MessageLogger' in process.__dict__:
     process.MessageLogger.categories.append('TriggerSummaryProducerAOD')
