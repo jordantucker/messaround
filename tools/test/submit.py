@@ -1,7 +1,6 @@
 import os, sys
 
-crab_cfg_template = '''
-[CMSSW]
+crab_cfg_template = '''[CMSSW]
 events_per_job = %(events_per_job)s
 total_number_of_events = -1
 pset = hlt.py
@@ -13,9 +12,8 @@ ui_working_dir = crab/HLTRun2/crab_%(name)s
 return_data = 1
 
 [CRAB]
+jobtype = cmssw
 scheduler = %(scheduler)s
-
-[GRID]
 '''
 
 os.system('mkdir -p crab/HLTRun2')
@@ -57,5 +55,5 @@ for name, datasetpath in datasets:
 
     crab_cfg = crab_cfg_template % locals()
     open('crab.cfg', 'wt').write(crab_cfg)
-    #os.system('crab -create -submit all')
+    os.system('crab -create -submit all')
 
