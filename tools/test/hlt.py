@@ -46007,8 +46007,8 @@ process.HLTAnalyzerEndpath = cms.EndPath( process.hltL1GtTrigReport + process.hl
 #process.ALCAPHISYMOutput = cms.EndPath( process.hltPreAlCaEcalPhiSym + process.hltOutputALCAPHISYM )
 #process.ALCALUMIPIXELSOutput = cms.EndPath( process.hltPreALCALUMIPIXELSOutput + process.hltOutputALCALUMIPIXELS )
 
-process.load('generated_cff')
-from generated_cff import junk
+from generated_cff import add
+junk = add(process)
 
 process.HLTSchedule = cms.Schedule( *(process.HLTriggerFirstPath,
 process.HLT_PFHT550_4Jet_v1,
@@ -46102,7 +46102,7 @@ if 'hltDQML1SeedLogicScalers' in process.__dict__:
 
 # limit the number of events to be processed
 process.maxEvents = cms.untracked.PSet(
-    input = cms.untracked.int32( 100 )
+    input = cms.untracked.int32( 20 )
 )
 
 # enable the TrigReport and TimeReport
