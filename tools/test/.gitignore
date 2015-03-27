@@ -1,3 +1,5 @@
 *.root
 log.txt
 out.*.gz
+crab
+crab.cfg
