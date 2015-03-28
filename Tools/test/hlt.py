@@ -46057,7 +46057,9 @@ process.HLT_PFHT400_SixJet30_v1) + junk + (process.HLTriggerFinalPath, process.H
 process.source = cms.Source( "PoolSource",
     fileNames = cms.untracked.vstring(
 #'/store/mc/Phys14DR/QCD_Pt-1000to1400_Tune4C_13TeV_pythia8/GEN-SIM-RAW/AVE20BX25_tsg_castor_PHYS14_25_V3-v1/00000/00B2B0A4-E88D-E411-AAF5-0025905A612C.root'
-'file:/uscms/home/tucker/nobackup/00B2B0A4-E88D-E411-AAF5-0025905A612C.root'
+#'file:/uscms/home/tucker/nobackup/00B2B0A4-E88D-E411-AAF5-0025905A612C.root'
+'/store/user/mzientek/Neutralino_M400_13TeV_DisplaceVtx_GENSIM_721/Neutralino_731_m400_HLT/8bb1453964da032b385b47cbbd4968dd/step2_731_m400_topub_9_2_RdF.root'
+
     ),
     inputCommands = cms.untracked.vstring(
         'keep *'
