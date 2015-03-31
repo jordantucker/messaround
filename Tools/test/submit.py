@@ -33,15 +33,14 @@ datasets = [
     ('qcd1400', '/QCD_Pt-1400to1800_Tune4C_13TeV_pythia8/Phys14DR-AVE20BX25_tsg_castor_PHYS14_25_V3-v1/GEN-SIM-RAW'),
     ('qcd1800', '/QCD_Pt-1800_Tune4C_13TeV_pythia8/Phys14DR-AVE20BX25_tsg_castor_PHYS14_25_V3-v1/GEN-SIM-RAW'),
     ('neugun', '/Neutrino_Pt-2to20_gun/Phys14DR-AVE20BX25_tsg_PHYS14_25_V3-v1/GEN-SIM-RAW'),
-    ('mfv0400', '/Neutralino_M400_13TeV_DisplaceVtx_GENSIM_721/mzientek-Neutralino_M400_13TeV_DisplaceVtx_GENSIM_721-9deefa5acb2c6fadfb6a8803bc643ebf/USER'),
-    ('mfv0500', '/Neutralino_M500_13TeV_DisplaceVtx_GENSIM_721/mzientek-Neutralino_M500_13TeV_DisplaceVtx_GENSIM_721-9deefa5acb2c6fadfb6a8803bc643ebf/USER'),
-    ('mfv0600', '/Neutralino_M600_13TeV_DisplaceVtx_GENSIM_721/mzientek-Neutralino_M600_13TeV_DisplaceVtx_GENSIM_721-9deefa5acb2c6fadfb6a8803bc643ebf/USER'),
-    ('mfv0700', '/Neutralino_M700_13TeV_DisplaceVtx_GENSIM_721/mzientek-Neutralino_M700_13TeV_DisplaceVtx_GENSIM_721-9deefa5acb2c6fadfb6a8803bc643ebf/USER'),
-    ('mfv0800', '/Neutralino_M800_13TeV_DisplaceVtx_GENSIM_721/mzientek-Neutralino_M800_13TeV_DisplaceVtx_GENSIM_721-9deefa5acb2c6fadfb6a8803bc643ebf/USER'),
-    ('mfv0900', '/Neutralino_M900_13TeV_DisplaceVtx_GENSIM_721/mzientek-Neutralino_M900_13TeV_DisplaceVtx_GENSIM_721-9deefa5acb2c6fadfb6a8803bc643ebf/USER'),
-    ('mfv1000', '/Neutralino_M1TeV_13TeV_DisplaceVtx_GENSIM_721/mzientek-Neutralino_M1TeV_13TeV_DisplaceVtx_GENSIM_721-9deefa5acb2c6fadfb6a8803bc643ebf/USER'),
+    ('mfv0400', '/Neutralino_M400_13TeV_DisplaceVtx_GENSIM_721/mzientek-Neutralino_731_m400_HLT-8bb1453964da032b385b47cbbd4968dd/USER'),
+    ('mfv0500', '/Neutralino_M500_13TeV_DisplaceVtx_GENSIM_721/mzientek-Neutralino_731_m500_HLT-8bb1453964da032b385b47cbbd4968dd/USER'),
+    ('mfv0600', '/Neutralino_M600_13TeV_DisplaceVtx_GENSIM_721/mzientek-Neutralino_731_m600_HLT-8bb1453964da032b385b47cbbd4968dd/USER'),
+    ('mfv0700', '/Neutralino_M700_13TeV_DisplaceVtx_GENSIM_721/mzientek-Neutralino_731_m700_HLT-8bb1453964da032b385b47cbbd4968dd/USER'),
+    ('mfv0800', '/Neutralino_M800_13TeV_DisplaceVtx_GENSIM_721/mzientek-Neutralino_731_m800_HLT-8bb1453964da032b385b47cbbd4968dd/USER'),
+    ('mfv0900', '/Neutralino_M900_13TeV_DisplaceVtx_GENSIM_721/mzientek-Neutralino_731_m900_HLT-8bb1453964da032b385b47cbbd4968dd/USER'),
+    ('mfv1000', '/Neutralino_M1TeV_13TeV_DisplaceVtx_GENSIM_721/mzientek-Neutralino_731_m1000_HLT-8bb1453964da032b385b47cbbd4968dd/USER'),
 ]
-
 
 for name, datasetpath in datasets:
     if name.startswith('mfv'):
