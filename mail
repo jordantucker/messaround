@@ -1,0 +1,84 @@
+From: "GitHub Troll" <tuckerserver@yahoo.com>
+To: jordantucker@gmail.com
+Subject: [jordantucker/cmssw-usercode] commits
+Content-Type: text/html; charset=us-ascii
+
+<span style="font-family: monospace; font-weight: bold;">Commit: <a href="https://github.com/jordantucker/messaround/commit/db88e724a4e6edfadd8e9991f71fb79165f55b3d">db88e72</a>: Jordan Tucker &lt;jordantucker@gmail.com&gt; Tue Mar 31 12:14:47 2015 -0500</span><br>
+<span style="font-family: monospace;">Message: shoulda used the other in the first place</span><br>
+<span style="font-family: monospace;">Stat:
+<pre> Tools/plugins/BuildFile.xml              |    7 -
+ Tools/plugins/SimpleTriggerEfficiency.cc |  148 ----
+ Tools/python/CRABTools.py                | 1074 ------------------------------
+ Tools/python/DBS.py                      |  128 ----
+ Tools/python/general.py                  |  131 ----
+ Tools/python/hadd.py                     |   83 ---
+ Tools/scripts/crchkps                    |   37 -
+ Tools/scripts/crdatajsons                |    6 -
+ Tools/scripts/crdiag                     |   48 --
+ Tools/scripts/crget                      |   29 -
+ Tools/scripts/crhadd                     |   39 --
+ Tools/scripts/crjobprobs                 |   58 --
+ Tools/scripts/crkillall                  |   13 -
+ Tools/scripts/crlaststatus               |   35 -
+ Tools/scripts/crlog                      |   37 -
+ Tools/scripts/crlogs                     |   16 -
+ Tools/scripts/crmon                      |  516 --------------
+ Tools/scripts/crpub                      |   10 -
+ Tools/scripts/crrejob                    |   59 --
+ Tools/scripts/crsuball                   |    6 -
+ Tools/scripts/crtidy                     |   34 -
+ Tools/scripts/crtools                    |    6 -
+ Tools/scripts/dass                       |  128 ----
+ Tools/scripts/logcms.py                  |   73 --
+ Tools/scripts/sba                        |    1 -
+ Tools/scripts/sbpush                     |   12 -
+ 26 files changed, 2734 deletions(-)
+</pre>
+</span>
+<span style="font-family: monospace; font-weight: bold;">Commit: <a href="https://github.com/jordantucker/messaround/commit/09644328f8cf6a93e37860a61834ef638fbabda8">0964432</a>: Jordan Tucker &lt;jordantucker@gmail.com&gt; Tue Mar 31 12:15:33 2015 -0500</span><br>
+<span style="font-family: monospace;">Message: lala</span><br>
+<span style="font-family: monospace;">Stat:
+<pre> Tools/test/generate.py => generate.py           | 0
+ Tools/test/generated_cff.py => generated_cff.py | 0
+ Tools/test/hlt.py => hlt.py                     | 0
+ Tools/test/submit.py => submit.py               | 0
+ 4 files changed, 0 insertions(+), 0 deletions(-)
+Patch:
+diff --git a/Tools/test/generate.py b/generate.py
+similarity index 100%
+rename from Tools/test/generate.py
+rename to generate.py
+diff --git a/Tools/test/generated_cff.py b/generated_cff.py
+similarity index 100%
+rename from Tools/test/generated_cff.py
+rename to generated_cff.py
+diff --git a/Tools/test/hlt.py b/hlt.py
+similarity index 100%
+rename from Tools/test/hlt.py
+rename to hlt.py
+diff --git a/Tools/test/submit.py b/submit.py
+similarity index 100%
+rename from Tools/test/submit.py
+rename to submit.py
+</pre>
+</span>
+<span style="font-family: monospace; font-weight: bold;">Commit: <a href="https://github.com/jordantucker/messaround/commit/97ea703b801e7808950e2642e2ff4a5d60b7c665">97ea703</a>: Jordan Tucker &lt;jordantucker@gmail.com&gt; Tue Mar 31 12:15:51 2015 -0500</span><br>
+<span style="font-family: monospace;">Message: baba</span><br>
+<span style="font-family: monospace;">Stat:
+<pre> Tools/test/.gitignore | 6 ------
+ 1 file changed, 6 deletions(-)
+Patch:
+diff --git a/Tools/test/.gitignore b/Tools/test/.gitignore
+deleted file mode 100644
+index 5b2f7c5..0000000
+--- a/Tools/test/.gitignore
++++ /dev/null
+@@ -1,6 +0,0 @@
+-*.root
+-log.txt
+-out.*.gz
+-crab
+-crab.cfg
+-crab.history
+</pre>
+</span>
